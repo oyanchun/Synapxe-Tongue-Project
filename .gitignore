@@ -1,2 +1,6 @@
 /Model Development/checkpoints/*
 /Model Development/dataset/*
+/Static Analysis/utils/__pycache__
+__pycache__/
+*.py[cod]
+*.so

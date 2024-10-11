@@ -142,7 +142,7 @@ def main():
     #         cv2.imwrite(vis_path, visualization)
             
     # Test single image
-    image_path = 'Samples/sample_1.jpg'
+    image_path = 'Samples/sample_2.jpg'
     image = cv2.imread(image_path)
     num_toothmarks, visualization = detect_toothmarks(image)
     cv2.imwrite('Visualizations/test_visualization_toothmarks_single.jpg', visualization)
