@@ -123,29 +123,29 @@ def detect_toothmarks(image, return_visualization=True):
 
 
 def main():
-    # Test on suite of images
-    # image_path = 'Test Images'
-    # images = os.listdir(image_path)
-    # for image_file in images:
-    #     image_path = 'Test Images'
-    #     if image_file.lower().endswith(('.png', '.jpg', '.jpeg')):
-    #         image_path = os.path.join(image_path, image_file)
-    #         image = cv2.imread(image_path)
-    #         if image is None:
-    #             print(f"Error: Unable to read image at {image_path}")
-    #             continue
+    # Run on suite of images
+    image_path = 'Static Analysis/Data/to_extract'
+    images = os.listdir(image_path)
+    for image_file in images:
+        image_path = 'Static Analysis/Data/to_extract'
+        if image_file.lower().endswith(('.png', '.jpg', '.jpeg')):
+            image_path = os.path.join(image_path, image_file)
+            image = cv2.imread(image_path)
+            if image is None:
+                print(f"Error: Unable to read image at {image_path}")
+                continue
             
-    #         num_toothmarks, visualization = detect_toothmarks_with_visualization(image)
+            num_toothmarks, visualization = detect_toothmarks(image)
 
-    #         # Save visualization
-    #         vis_path = 'Test Images/Toothmark Visualizations/test_visualization_toothmarks' + image_file
-    #         cv2.imwrite(vis_path, visualization)
+            # Save visualization
+            vis_path = 'Visualizations/Toothmark Visualizations/test_visualization_toothmarks_' + image_file
+            cv2.imwrite(vis_path, visualization)
             
-    # Test single image
-    image_path = 'Samples/sample_2.jpg'
-    image = cv2.imread(image_path)
-    num_toothmarks, visualization = detect_toothmarks(image)
-    cv2.imwrite('Visualizations/test_visualization_toothmarks_single.jpg', visualization)
+    # Run on single image
+    # image_path = 'Samples/segmented/segmented_sample_1.png'
+    # image = cv2.imread(image_path)
+    # num_toothmarks, visualization = detect_toothmarks(image)
+    # cv2.imwrite('Visualizations/test_visualization_toothmarks_single.jpg', visualization)
     
 if __name__ == "__main__":
     main()

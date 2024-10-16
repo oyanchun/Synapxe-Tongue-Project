@@ -1,7 +1,9 @@
 /Model Development/checkpoints/*
 /Model Development/dataset/*
 /Static Analysis/utils/__pycache__
+/Static Analysis/Data/*
 /Data Manipulation/Segmentation/output
+/Visualizations/*
 __pycache__/
 *.py[cod]
 *.so
