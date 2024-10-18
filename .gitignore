@@ -9,4 +9,6 @@ __pycache__/
 *.so
 *.pt
 *.zip
+*.png
+*.jpg
 .env
