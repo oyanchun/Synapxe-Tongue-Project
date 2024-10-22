@@ -1,5 +1,6 @@
 /Model Development/checkpoints/*
 /Model Development/dataset/*
+/Model Development/clusters/*
 /Static Analysis/utils/__pycache__
 /Static Analysis/Data/*
 /Data Manipulation/Segmentation/output
@@ -9,6 +10,12 @@ __pycache__/
 *.so
 *.pt
 *.zip
-*.png
+*.safetensors
+*.pt
+*.bin
+*.pth
 *.jpg
+*.png
+config.json
+trainer_state.json
 .env
