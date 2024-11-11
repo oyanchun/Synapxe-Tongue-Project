@@ -17,6 +17,7 @@ __pycache__/
 *.jpg
 *.png
 *.csv
+*.xlsx
 config.json
 trainer_state.json
 .env
