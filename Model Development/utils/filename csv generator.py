@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 
+# Generates a .csv file with image filenames
 dataset_path = "dataset_unannotated"
 
 image_files = [f for f in os.listdir(dataset_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
