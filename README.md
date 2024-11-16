@@ -6,7 +6,7 @@
 Stores all code related to augmenting, cleaning and otherwise manipulating the original dataset from [Roboflow](https://universe.roboflow.com/37/-tt3dc).
 
 ### Model Development
-Houses notebooks used for all iterations of model development, including old PyTorch code and code using old versions of the dataset.
+Houses notebooks used for all iterations of model development, including code for clustering and deep learning.
 
 ### Samples
 Images used to produce examples from static analysis.
