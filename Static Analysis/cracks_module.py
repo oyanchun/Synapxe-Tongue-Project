@@ -6,6 +6,10 @@ import math
 from utils.visualization import *
 from utils.util_functions import *
 
+'''
+This file detects cracks on a tongue image using canny and edge detection. 
+Running the file will produce a visualization in the "Visualizations" directory.
+'''
 
 def detect_cracks(image, vertical_canny_threshold_low=30, vertical_canny_threshold_high=140, 
                         horizontal_canny_threshold_low=40, horizontal_canny_threshold_high=150, 

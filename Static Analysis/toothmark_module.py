@@ -4,6 +4,10 @@ import os
 
 from utils.visualization import *
 
+'''
+This file detects toothmarks on a tongue image using contouring. 
+Running the file will produce a visualization in the "Visualizations" directory.
+'''
 
 def create_edge_mask(image, tongue_mask):
     height, width = image.shape[:2]

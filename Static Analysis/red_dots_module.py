@@ -4,6 +4,10 @@ import numpy as np
 from utils.visualization import *
 from utils.util_functions import *
 
+'''
+This file detects red dots on a tongue image using adaptive thresholding. 
+Running the file will produce a visualization in the "Visualizations" directory.
+'''
 
 def contour_near_edge(contour, image):
     """
