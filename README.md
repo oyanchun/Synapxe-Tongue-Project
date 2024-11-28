@@ -1,5 +1,6 @@
 # Synapxe-Tongue-Project
- 
+python version: 3.11.10
+
 ## A brief guide to the contents of this repository
 
 ### Data Manipulation
