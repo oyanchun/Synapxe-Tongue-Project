@@ -17,6 +17,38 @@ def detect_cracks(image, vertical_canny_threshold_low=30, vertical_canny_thresho
                         min_line_length_vertical=50, max_line_gap_vertical=20,
                         min_line_length_horizontal=50, max_line_gap_horizontal=20,
                         dynamic_threshold=0, return_visualization=True):
+    '''
+    Detects vertical and horizontal cracks in an image based on edge detection and line detection techniques.
+
+    This function applies various image processing steps such as contrast enhancement, edge detection (Canny),
+    and line detection (Hough Transform) to identify cracks within the central region of the input image. 
+    It also generates a grid visualization of the intermediate processing steps for debugging or presentation purposes.
+
+    Args:
+        image (numpy.ndarray): The input image in BGR format.
+        vertical_canny_threshold_low (int, optional): Lower threshold for Canny edge detection on vertical edges. Defaults to 30.
+        vertical_canny_threshold_high (int, optional): Upper threshold for Canny edge detection on vertical edges. Defaults to 140.
+        horizontal_canny_threshold_low (int, optional): Lower threshold for Canny edge detection on horizontal edges. Defaults to 40.
+        horizontal_canny_threshold_high (int, optional): Upper threshold for Canny edge detection on horizontal edges. Defaults to 150.
+        vertical_hough_threshold (int, optional): Threshold for the Hough Transform to detect vertical lines. Defaults to 30.
+        horizontal_hough_threshold (int, optional): Threshold for the Hough Transform to detect horizontal lines. Defaults to 75.
+        min_line_length_vertical (int, optional): Minimum line length for vertical line detection in Hough Transform. Defaults to 50.
+        max_line_gap_vertical (int, optional): Maximum gap between line segments for vertical line detection. Defaults to 20.
+        min_line_length_horizontal (int, optional): Minimum line length for horizontal line detection in Hough Transform. Defaults to 50.
+        max_line_gap_horizontal (int, optional): Maximum gap between line segments for horizontal line detection. Defaults to 20.
+        dynamic_threshold (int, optional): Minimum number of detected cracks to consider the result as True. Defaults to 0.
+        return_visualization (bool, optional): Whether to return a grid visualization of processing steps. Defaults to True.
+
+    Returns:
+        tuple: A tuple containing:
+            - result (bool): Whether the number of detected cracks meets or exceeds the dynamic threshold.
+            - grid_visualization (numpy.ndarray or None): A visualization of the processing steps if `return_visualization` is True. Otherwise, None.
+
+    Notes:
+        - The function detects cracks only in the central third region of the image.
+        - Detected cracks are based on vertical and horizontal line criteria using angle and length thresholds.
+        - Visualization includes labeled steps such as enhanced contrast, edge detection, and Hough line results.
+    '''
     original_image = image.copy()
     cropped_image = crop_center(image)
     gray = cv2.cvtColor(cropped_image, cv2.COLOR_BGR2GRAY)
